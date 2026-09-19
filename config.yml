@@ -1,0 +1,22 @@
+qdrant:
+  host: "${QDRANT_HOST:localhost}"
+  port: "${QDRANT_PORT:6333}"
+  api_key: "${QDRANT_API_KEY:}"
+  collection_name: "${QDRANT_COLLECTION:hospital_knowledge}"
+  vector_size: 768
+
+ollama:
+  base_url: "${OLLAMA_BASE_URL:http://localhost:11434}"
+  llm_model: "${OLLAMA_LLM_MODEL:llama3.2:3b}"
+  embedding_model: "${OLLAMA_EMBEDDING_MODEL:nomic-embed-text}"
+
+application:
+  name: "Hospital Knowledge Assistant"
+  environment: "${APP_ENV:development}"
+  log_level: "${LOG_LEVEL:INFO}"
+  allowed_origins: "${ALLOWED_ORIGINS:http://localhost:7860}"
+  max_retrieval_results: "${MAX_RETRIEVAL_RESULTS:5}"
+
+storage:
+  documents_path: "${DOCUMENTS_PATH:data/documents}"
+  audit_log_path: "${AUDIT_LOG_PATH:data/audit/audit.log}"

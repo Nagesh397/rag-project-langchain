@@ -1,0 +1,19 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+
+# Runtime data and model artifacts
+data/audit/*
+data/qdrant/*
+data/documents/uploads/*
+ollama-models/
+
+# Keep directory placeholders
+data/audit/.gitkeep
+data/documents/uploads/.gitkeep
+abc

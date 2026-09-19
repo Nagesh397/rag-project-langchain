@@ -11,7 +11,7 @@ from app.services.qdrant_store import QdrantStore
 async def main() -> None:
     settings = load_settings()
     count = await KnowledgeBaseIngestor(settings, OllamaClient(settings), QdrantStore(settings)).ingest_directory(
-        settings.documents_path.parent.parent / "knowledge_base"
+        settings.documents_path
     )
     print(f"Indexed {count} knowledge-base chunks")
 

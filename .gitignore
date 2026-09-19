@@ -11,6 +11,7 @@ __pycache__/
 data/audit/*
 data/qdrant/*
 data/documents/uploads/*
+data/documents/drive/*
 ollama-models/
 
 # Keep directory placeholders

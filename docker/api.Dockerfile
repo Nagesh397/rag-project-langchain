@@ -8,7 +8,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app ./app
 COPY config.yml ./config.yml
-COPY knowledge_base ./knowledge_base
 COPY scripts ./scripts
 COPY data ./data
 

@@ -28,6 +28,7 @@ class Settings:
     audit_log_path: Path
     max_retrieval_results: int
     allowed_origins: list[str]
+    google_drive_folder_url: str
 
 
 def _resolve(value: Any) -> Any:
@@ -58,6 +59,7 @@ def load_settings(config_path: Path | None = None) -> Settings:
     ollama = raw["ollama"]
     application = raw["application"]
     storage = raw["storage"]
+    google_drive = raw.get("google_drive", {})
     api_key = qdrant.get("api_key") or None
     return Settings(
         qdrant_host=qdrant["host"],
@@ -72,4 +74,5 @@ def load_settings(config_path: Path | None = None) -> Settings:
         audit_log_path=root / storage["audit_log_path"],
         max_retrieval_results=int(application["max_retrieval_results"]),
         allowed_origins=[item.strip() for item in application["allowed_origins"].split(",") if item.strip()],
+        google_drive_folder_url=google_drive.get("folder_url", ""),
     )

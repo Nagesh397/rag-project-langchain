@@ -1,5 +1,6 @@
 services:
   api:
+    image: nageshj123/hospital-rag-api:api_latest
     build:
       context: .
       dockerfile: docker/api.Dockerfile
@@ -20,6 +21,7 @@ services:
       - hospital-rag
 
   ui:
+    image: nageshj123/hospital-rag-ui:ui_latest
     build:
       context: .
       dockerfile: docker/ui.Dockerfile

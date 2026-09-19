@@ -110,6 +110,27 @@ app/api/main.py
 
 The user-question workflow does not download Google Drive files or create document embeddings. Those are developer/synchronization tasks performed before retrieval.
 
+## Evaluate RAG quality
+
+The project includes a small golden evaluation set in `Extra/evaluation/tests.json`. It evaluates retrieval and generated answers separately:
+
+- Retrieval uses keyword coverage, MRR, nDCG, and expected source coverage.
+- Answers use the configured Ollama LLM as a judge for accuracy, completeness, and relevance.
+- The unanswerable case checks that the assistant does not invent clinical treatment guidance.
+
+Run the evaluator from the repository root after installing `requirements.txt` and starting Qdrant and Ollama:
+
+```powershell
+python -m Extra.evaluation.eval --mode retrieval
+python -m Extra.evaluation.eval --mode answers
+python -m Extra.evaluation.eval --mode all --test 0
+python Extra/evaluator.py
+```
+
+The evaluator uses the same `OLLAMA_LLM_MODEL`, `OLLAMA_EMBEDDING_MODEL`, Qdrant collection, and retrieval limit as the application. Re-run it after changing source documents, chunking, embedding models, prompts, or LLM models.
+
+`Extra/evalution.ipynb` is intended for inspecting an individual test case interactively. `Extra/evaluator.py` launches the aggregate Gradio dashboard with category charts.
+
 ## Configuration and secrets
 
 Copy `.env.example` to `.env` and replace the placeholder values. Do not put credentials in `config.yml`, source code, Markdown documents, or Dockerfiles. The application loads `.env`, reads `config.yml`, and resolves `${VARIABLE:default}` references at startup. In Docker, service names such as `qdrant` and `ollama` are used; outside Docker, use `localhost`.

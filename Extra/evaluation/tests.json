@@ -1,0 +1,108 @@
+[
+  {
+    "question": "What should staff do first after a patient safety event is discovered?",
+    "keywords": ["protect the patient", "stabilize the situation", "clinical help"],
+    "reference_answer": "Staff must first protect the patient and stabilize the situation, calling for clinical help and providing care within their competence. Care must not be delayed to complete a report.",
+    "category": "direct_fact",
+    "expected_sources": ["01_patient_safety_and_incident_reporting.md"]
+  },
+  {
+    "question": "When should a safety event report be submitted?",
+    "keywords": ["before the end of the shift", "electronic safety report", "immediate"],
+    "reference_answer": "The person who discovers or experiences the event should notify the immediate supervisor as soon as practical and submit an electronic safety report before the end of the shift, or as soon as they are able. Serious events must be escalated immediately.",
+    "category": "temporal",
+    "expected_sources": ["01_patient_safety_and_incident_reporting.md"]
+  },
+
+  {
+    "question": "Which identifiers must be checked before medication administration?",
+    "keywords": ["two approved identifiers", "room number is not an identifier", "patient identity"],
+    "reference_answer": "Staff must verify the patient's identity using two approved identifiers. A room number is not an acceptable identifier.",
+    "category": "direct_fact",
+    "expected_sources": ["02_medication_management.md"]
+  },
+  {
+    "question": "What safeguards may be required for high-alert medicines?",
+    "keywords": ["standardized concentrations", "independent double checks", "barcode verification"],
+    "reference_answer": "Safeguards for high-alert medicines may include standardized concentrations, restricted storage, barcode verification, independent double checks, smart-pump libraries, and monitoring protocols.",
+    "category": "procedure",
+    "expected_sources": ["02_medication_management.md"]
+  },
+  {
+    "question": "What should staff do if a medication order appears unsafe or incomplete?",
+    "keywords": ["stop and clarify", "incomplete", "unsafe"],
+    "reference_answer": "The professional must stop and clarify an order that appears incomplete, unsafe, or inconsistent with the patient's condition.",
+    "category": "safety_boundary",
+    "expected_sources": ["02_medication_management.md"]
+  },
+  {
+    "question": "When is alcohol-based hand rub preferred, and when are soap and water required?",
+    "keywords": ["alcohol-based hand rub", "not visibly soiled", "soap and water", "visibly dirty"],
+    "reference_answer": "Alcohol-based hand rub is preferred when hands are not visibly soiled. Soap and water are required when hands are visibly dirty and in situations identified by infection prevention guidance.",
+    "category": "comparison",
+    "expected_sources": ["03_infection_prevention_and_control.md"]
+  },
+  {
+    "question": "What precautions apply to every patient regardless of known infection status?",
+    "keywords": ["standard precautions", "all patients", "hand hygiene"],
+    "reference_answer": "Standard precautions apply to all patients regardless of known infection status and include hand hygiene, risk-based PPE, respiratory hygiene, safe injection practice, sharps safety, and appropriate handling of the environment, linen, and waste.",
+    "category": "direct_fact",
+    "expected_sources": ["03_infection_prevention_and_control.md"]
+  },
+  {
+    "question": "What is the immediate response to a suspected occupational exposure?",
+    "keywords": ["immediate first aid", "supervisor", "occupational health"],
+    "reference_answer": "A suspected occupational exposure requires immediate first aid and prompt notification to the supervisor and occupational health service. Reporting should not wait for symptoms.",
+    "category": "procedure",
+    "expected_sources": ["03_infection_prevention_and_control.md"]
+  },
+  {
+    "question": "Who may call for emergency assistance when a person appears unstable?",
+    "keywords": ["Any staff member", "emergency assistance", "unstable"],
+    "reference_answer": "Any staff member may call for emergency assistance when a person appears unstable, and the call should not be delayed while seeking permission.",
+    "category": "direct_fact",
+    "expected_sources": ["04_emergency_response_and_escalation.md"]
+  },
+  {
+    "question": "What information should a rapid response caller provide?",
+    "keywords": ["exact location", "patient identifier", "concern", "callback information"],
+    "reference_answer": "The caller should provide the exact location, patient identifier, concern, and callback information.",
+    "category": "procedure",
+    "expected_sources": ["04_emergency_response_and_escalation.md"]
+  },
+  {
+    "question": "What should staff do with a suspicious package?",
+    "keywords": ["Do not touch", "isolate the area", "security"],
+    "reference_answer": "Staff should protect themselves and others, call the designated response number, isolate the area when safe, and follow instructions from security, facilities, or incident command. They must not touch suspicious items.",
+    "category": "safety_boundary",
+    "expected_sources": ["04_emergency_response_and_escalation.md"]
+  },
+  {
+    "question": "What does minimum necessary access mean for hospital information?",
+    "keywords": ["defined work purpose", "minimum necessary information", "role-based access"],
+    "reference_answer": "Access must be granted for a defined work purpose and limited to the minimum necessary information. Role-based access is reviewed when a person changes role, leaves, or no longer needs the system.",
+    "category": "direct_fact",
+    "expected_sources": ["05_privacy_and_information_security.md"]
+  },
+  {
+    "question": "Can staff paste identifiable patient data into an unapproved prompt?",
+    "keywords": ["must not paste", "identifiable patient data", "unapproved prompt"],
+    "reference_answer": "No. Staff must not paste identifiable patient data into an unapproved prompt or attempt to retrieve records outside their job function.",
+    "category": "safety_boundary",
+    "expected_sources": ["05_privacy_and_information_security.md"]
+  },
+  {
+    "question": "How should a suspected privacy or security incident be reported?",
+    "keywords": ["report it immediately", "service desk", "privacy office", "information security"],
+    "reference_answer": "A suspected privacy or security incident should be reported immediately to the service desk, privacy office, or information security team using the approved channel. Staff should not delete evidence.",
+    "category": "procedure",
+    "expected_sources": ["05_privacy_and_information_security.md"]
+  },
+  {
+    "question": "What is the hospital policy's approved treatment for appendicitis?",
+    "keywords": [],
+    "reference_answer": "The approved hospital policies provided do not contain treatment guidance for appendicitis. The assistant should say that the information is unavailable rather than diagnose or prescribe.",
+    "category": "unanswerable",
+    "expected_sources": []
+  }
+]

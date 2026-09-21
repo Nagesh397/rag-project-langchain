@@ -110,6 +110,38 @@ app/api/main.py
 
 The user-question workflow does not download Google Drive files or create document embeddings. Those are developer/synchronization tasks performed before retrieval.
 
+## AI Git Assistant MCP server
+
+This repository includes a standalone MCP server for inspecting and operating on this local Git repository. It exposes these tools over `stdio`:
+
+- `git_status` reports the current branch and working-tree changes.
+- `git_diff` returns unstaged changes, or staged changes when `staged` is true.
+- `git_stage` stages explicitly selected repository-relative paths.
+- `git_unstage` removes explicitly selected paths from the staging area.
+- `git_commit` commits changes that have already been staged.
+- `git_push` pushes the current branch to its configured upstream remote.
+- `git_log` returns recent commits.
+
+The server never executes arbitrary shell commands. It only runs a fixed set of Git operations. Configure the repository explicitly in the VS Code MCP configuration:
+
+```json
+{
+  "servers": {
+    "ai-git-assistant": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "args": ["${workspaceFolder}/my-github-mcp/server.py"],
+      "cwd": "${workspaceFolder}/my-github-mcp",
+      "env": {
+        "GIT_REPOSITORY_PATH": "${workspaceFolder}"
+      }
+    }
+  }
+}
+```
+
+The MCP client should request approval before calling `git_stage`, `git_commit`, or `git_push`. `git_commit` requires staged changes and a non-empty message; `git_push` uses the repository's configured Git remote and upstream branch.
+
 ## Evaluate RAG quality
 
 The project includes a small golden evaluation set in `Extra/evaluation/tests.json`. It evaluates retrieval and generated answers separately:

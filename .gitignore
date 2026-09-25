@@ -8,13 +8,7 @@ __pycache__/
 .DS_Store
 
 # Runtime data and model artifacts
-data/audit/*
-data/qdrant/*
-data/documents/uploads/*
-data/documents/drive/*
+
 ollama-models/
 
-# Keep directory placeholders
-data/audit/.gitkeep
-data/documents/uploads/.gitkeep
-abc
+
